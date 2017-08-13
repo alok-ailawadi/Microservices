@@ -1,14 +1,33 @@
-group 'com.bootacamptech'
-version '1.0-SNAPSHOT'
-
-apply plugin: 'java'
-
-sourceCompatibility = 1.8
-
-repositories {
-    mavenCentral()
+// 1
+buildscript {
+    repositories {
+        // 2
+        jcenter()
+        mavenCentral()
+    }
+    // 3
+    dependencies {
+        classpath('io.spring.gradle:dependency-management-plugin:1.0.3.RELEASE')
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
 }
 
-dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.11'
+// 4
+subprojects {
+    repositories {
+        // 5
+        jcenter()
+        mavenCentral()
+    }
+
+    // 6
+    apply plugin: 'java'
+    apply plugin: 'io.spring.dependency-management'
+
+    dependencyManagement {
+        imports {
+            // 7
+            mavenBom("org.springframework.boot:spring-boot-dependencies:${springBootVersion}")
+        }
+    }
 }

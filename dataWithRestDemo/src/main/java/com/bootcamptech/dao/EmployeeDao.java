@@ -1,7 +1,6 @@
 package com.bootcamptech.dao;
 
 import com.bootcamptech.entities.Employee;
-import com.sun.xml.internal.ws.message.EmptyMessageImpl;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.rest.core.annotation.RestResource;
 
