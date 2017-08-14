@@ -15,6 +15,7 @@ public class ApplicationRole {
     long employeeId;
     Roles roleName;
 
+
     public Roles getRoleName() {
         return roleName;
     }
