@@ -1,4 +1,4 @@
 rootProject.name = 'Microservices'
 include 'thymeLeafDemo'
-include 'dataWithRestDemo' , 'configserver'
+include 'dataWithRestDemo' , 'configserver' , 'eurekaserver', 'wordclient'
 
