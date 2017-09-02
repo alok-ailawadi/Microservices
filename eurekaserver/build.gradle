@@ -1,14 +1,14 @@
-//buildscript {
-//	ext {
-//		springBootVersion = '1.5.6.RELEASE'
-//	}
-//	repositories {
-//		mavenCentral()
-//	}
-//	dependencies {
-//		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-//	}
-//}
+buildscript {
+	ext {
+		springBootVersion = '1.5.6.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
 
 apply plugin: 'java'
 apply plugin: 'eclipse'
@@ -30,8 +30,8 @@ dependencies {
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
 
-//dependencyManagement {
-//	imports {
-//		mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
-//	}
-//}
+dependencyManagement {
+	imports {
+		mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+	}
+}

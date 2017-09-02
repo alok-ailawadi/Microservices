@@ -1,0 +1,41 @@
+#property for all profiles
+
+---
+spring:
+  application:
+    name: sentence
+  cloud:
+    config:
+       uri: http://localhost:8001
+server:
+  port: 8020
+management:
+  security:
+    enabled: false
+
+keycloak:
+    auth-server-url: http://localhost:8080/auth
+#    credentials:
+#        secret: ee5da674-a7c1-44c2-87c0-f740ac7c11c0
+    realm: kite
+    resource: demoapp
+    bearer-only: true
+    ssl-required: none
+    public-key-cache-ttl: 3000
+#    realm-key: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAgMCW8H+mXFLxT1mvc1Qer5kLDPkLnFb/hwXAw3CGSXBfOpUca59uaCO2sHDs+QeIUwVSZ8AojjnHXoNu7kHP4m6NVcXlYAm6IX2PeH5vVzFHRxMsvcpiDh0mXL3yBevHW7qplFyXMQ1OJ5i8mv3AUFo2/b+qh1eP/PCFFOEBsPdVBcyBRbC3A/4d1kMyheQxGTGDjNUW4fKxRdNTisvz9PqR46SJRFd20GUsfD9AsNYNpFL06IVzKvbRW5dayT7rVyP54sUXV8Xf6sFjotxAcXx59VM154c+v9l3/Z6r31hr3moT+mnLHcDATiCtJ7sOSxlYPCaxIagtCzmh3ScD0QIDAQAB
+#    securityConstraints:
+#    -   authRoles:
+#        - admin
+#        - user
+#        securityCollections:
+#        -   name: insecure stuff
+#            patterns:
+#            - /insecure
+#    -   authRoles:
+#        - admin
+#        securityCollections:
+#        -   name: admin stuff
+#            patterns:
+#            - /*
+#    ssl-required: none
+#    use-resource-role-mappings: true
