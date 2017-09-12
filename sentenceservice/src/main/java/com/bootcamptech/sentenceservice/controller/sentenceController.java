@@ -1,6 +1,7 @@
 package com.bootcamptech.sentenceservice.controller;
 
 
+import com.bootcamptech.sentenceservice.controller.dto.Sentence;
 import com.bootcamptech.sentenceservice.service.Sentenceservice;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,7 +16,7 @@ public class sentenceController {
     Sentenceservice sentenceService;
 
     @RequestMapping(path = "/sentence", method = RequestMethod.GET)
-    public @ResponseBody String getSentence()
+    public @ResponseBody String getSentenceHtml()
     {
 
         return "<h3>Some Sentences</h3><br/>" +
@@ -27,6 +28,13 @@ public class sentenceController {
                 ;
 
 
+    }
+
+    @RequestMapping(path = "/getsentence", method = RequestMethod.GET)
+    public @ResponseBody
+    Sentence getSentence()
+    {
+        return new Sentence(sentenceService.buildSentence());
     }
 
 }

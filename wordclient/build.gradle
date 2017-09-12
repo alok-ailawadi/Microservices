@@ -17,6 +17,7 @@ apply plugin: 'org.springframework.boot'
 
 repositories {
 	mavenCentral()
+    mavenLocal()
 }
 
 
@@ -27,15 +28,17 @@ ext {
 dependencies {
 	compile('org.springframework.cloud:spring-cloud-starter-eureka')
 	compile('org.springframework.cloud:spring-cloud-starter-config')
+	compile('com.bootcamptech:error:1.0.1')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
 
-bootRun {
-	systemProperties = System.properties
-}
+
 
 dependencyManagement {
 	imports {
 		mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
 	}
+}
+bootRun {
+	systemProperties = System.properties
 }
